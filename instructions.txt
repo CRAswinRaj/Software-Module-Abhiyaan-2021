@@ -2,7 +2,7 @@ Solutions for Section A is contained in abhiyaan_ros_ws folder(ROS workspace)
  
 package q123 contains solutions for question 1, 2 and 3. node1.py and node2.py are the Node 1 and Node 2 respectively as asked in question 2. listener_node.py is the node as asked in question 3.
 
-package q4 contains solutions for question 4. turtle_node.py is the node as asked in question 4.
+package q4 contains solutions for question 4. turtle_move.py is the node as asked in question 4.
 
 
 Solution for Section B is contained in SectionB folder
