@@ -1,0 +1,8 @@
+prefix=/home/aswin/MyFiles/Works/application forms/Abhiyaan app2/abhiyaan_ros_ws/install
+
+Name: q123
+Description: Description of q123
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

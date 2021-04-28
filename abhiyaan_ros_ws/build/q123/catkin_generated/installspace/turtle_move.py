@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+
+import rospy
+from geometry_msgs.msg import Twist
+from turtlesim.msg import Pose
+import math
+
+class TurtleBot:
+    def __init__(self):
+        rospy.init_node('turtle_node', anonymous=True)
+        self.t1_pose_sub = rospy.Subscriber('/turtle1/pose', Pose, self.t1_update)
+        self.t2_pose_sub = rospy.Subscriber('/turtle2/pose', Pose, self.t2_update)
+        self.t2_vel_pub = rospy.Publisher('/turtle2/cmd_vel', Twist, queue_size=10)
+
+        self.t1_pose = Pose()
+        self.t2_pose = Pose()
+        self.rate = rospy.Rate(10)
+        self.rate.sleep()
+        
+     
+    def t1_update(self, data):
+        self.t1_pose = data
+        #print(self.t1_pose.x)
+    
+    def t2_update(self, data):
+        self.t2_pose = data
+
+    def pose_distance(self):
+        return math.sqrt((self.t1_pose.x-self.t2_pose.x)**2 + 
+                         (self.t1_pose.y-self.t2_pose.y)**2)
+    
+    def steering_angle(self):
+        return math.atan2(self.t1_pose.y - self.t2_pose.y, self.t1_pose.x - self.t2_pose.x)
+    
+    def move(self):
+        vel_msg = Twist()
+        while self.pose_distance() > 2:
+            vel_msg.linear.x = 2 * self.pose_distance()
+            vel_msg.angular.z = 5 * (self. steering_angle() - self.t2_pose.theta)
+
+            self.t2_vel_pub.publish(vel_msg)
+
+            self.rate.sleep()
+        
+        # Turn turtle 2 by 90 degrees
+        vel_msg.linear.x = 0
+        vel_msg.angular.z = math.pi/2
+        self.t2_vel_pub.publish(vel_msg)
+        rospy.sleep(1)
+
+        # Make a circular turn
+        vel_msg.linear.x = math.pi
+        vel_msg.angular.z = -math.pi/2
+        self.t2_vel_pub.publish(vel_msg)
+        rospy.sleep(1)
+
+        # Moving to safe distance
+        while self.pose_distance() <= 4:
+            vel_msg.linear.x = 2*(4.1 - self.pose_distance())
+            vel_msg.angular.z = 0
+            self.t2_vel_pub.publish(vel_msg)
+
+            self.rate.sleep()
+        
+        vel_msg.linear.x = 0
+        self.t2_vel_pub.publish(vel_msg)
+
+        rospy.spin()
+    
+if __name__ == '__main__':
+    try:
+        bot = TurtleBot()
+        bot.move()
+    except rospy.ROSInterruptException:
+        pass
