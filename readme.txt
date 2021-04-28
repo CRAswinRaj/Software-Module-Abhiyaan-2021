@@ -23,7 +23,7 @@ Coordinator of Hospitality Team, Saarang
 
 Why I want to work in the team:
 ------------------------------
-One of the main reasons is that it would give great opportunities to get huge amount of technical knowledge being in the team. I can also learn to coordinate with others and do big projects, which I think will be a great experience required for my future and give a boost to my future career. I've always been fascinated by the technologies around us. I've wanted to be in a techincal team in IITM from the beginning. Since Abhiyaan is one of the best teams in IITM, being in the team is itself an honour. So, I think working in the team will help me in my future to improve confidence and increase my problem solving capabilities.   
+One of the main reasons is that it would give great opportunities to get huge amount of technical knowledge which I can get by working in the team. I can also learn to coordinate with others and do big projects, which I think will be a great experience required for my future and give a boost to my future career. I've always been fascinated by the technologies around us. I've wanted to be in a techincal team in IITM from the beginning. Since Abhiyaan is one of the best teams in IITM, being in the team is itself an honour. So, I think working in the team will help me in my future to improve confidence and increase my problem solving capabilities. 
 
 
 Relevant Courses:
