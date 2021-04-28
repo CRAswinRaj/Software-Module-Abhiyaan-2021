@@ -1,0 +1,8 @@
+prefix=/home/aswin/MyFiles/Works/application forms/Abhiyaan app2/abhiyaan_ros_ws/devel
+
+Name: q4
+Description: Description of q4
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
