@@ -16,6 +16,7 @@ Previous Experience:
 -------------------
 Learnt c++ in 11th and 12th
 Learnt python (from free resources like youtube videos)
+Done a project for ME2201 as a team to create program that generates cam profile based on used inputs and show how follower moves along with cam rotation(using python).
 
 
 Current POR:
