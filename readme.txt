@@ -15,7 +15,7 @@ WhatsApp Number:
 Previous Experience:
 -------------------
 Learnt c++ in 11th and 12th
-Learnt python from youtube videos
+Learnt python (from free resources like youtube videos)
 
 
 Current POR:
